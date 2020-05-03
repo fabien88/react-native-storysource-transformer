@@ -1,5 +1,9 @@
 const defaultStoryMatcher = "(storiesOf.*?\\(.*?module\\))";
 
+const escapeBackticks = (str) => {
+  return str.replace(/\`/g, "\\`").replace(/\$/g, "\\$");
+};
+
 module.exports.decorateStory = (
   originalCode,
   storyMatcher = defaultStoryMatcher
@@ -12,7 +16,8 @@ module.exports.decorateStory = (
   const importModule =
     "import {withSource} from '@storybook/source-loader/preview';";
 
-  const injectedSource = ".addDecorator(withSource(`" + originalCode + "`))";
+  const injectedSource =
+    ".addDecorator(withSource(`" + escapeBackticks(originalCode) + "`))";
 
   const code =
     importModule + originalCode.replace(regex, "$1" + injectedSource);

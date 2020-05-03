@@ -34,6 +34,22 @@ module.exports = {
 };
 ```
 
+If you already use another transformer, you can reference an intermediate file like this :  
+`metro.customTransformer.js` :
+
+```js
+const svgTransformer = require("react-native-svg-transformer");
+const storyTransformer = require("react-native-storysource-transformer");
+
+module.exports.transform = function (options) {
+  if (options.filename.endsWith(".svg")) {
+    return svgTransformer.transform(options);
+  } else {
+    return storyTransformer.transform(options);
+  }
+};
+```
+
 ### Step 3 : install storysource addon
 
 Install [storysource](https://github.com/storybookjs/storybook/tree/master/addons/storysource) addon and source-loader dependencies:

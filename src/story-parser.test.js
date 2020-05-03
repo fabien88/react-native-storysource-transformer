@@ -9,6 +9,14 @@ describe("decorate nicely", () => {
       storiesOf('Welcome', module).addDecorator(withSource(\`
       storiesOf('Welcome', module);\`));`);
   });
+  test("with backstick story", () => {
+    expect(
+      decorateStory(`
+      storiesOf(\`Welcome\${1+1}\`, module);`)
+    ).toBe(`import {withSource} from '@storybook/source-loader/preview';
+      storiesOf(\`Welcome\${1+1}\`, module).addDecorator(withSource(\`
+      storiesOf(\\\`Welcome\\\${1+1}\\\`, module);\`));`);
+  });
   test("with very strange simple story", () => {
     expect(
       decorateStory(`
