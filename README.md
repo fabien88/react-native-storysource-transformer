@@ -13,7 +13,7 @@ This package makes [storysource](https://github.com/storybookjs/storybook/blob/m
 ### Step 1 : install react-native-storysource-transformer library
 
 ```bash
-yarn add react-native-storysource-transformer -D
+yarn add react-native-storysource-transformer --dev
 ```
 
 ### Step 2 : Configure the react native packager
@@ -78,7 +78,7 @@ react-native-storysource-transformer is controlled by the react-native-storysour
 
 #### Examples:
 
-Both examples below will search `src` and `packages` directories recursively for files that end with `.stories.js` and write the output to `./storybook/storyLoader.js`
+Example below will handle every stories ending with `.stories.js` or `.stories.jsx`.
 
 ##### `package.json`
 
