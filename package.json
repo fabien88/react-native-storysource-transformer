@@ -14,7 +14,9 @@
   ],
   "keywords": [
     "addon",
-    "storybook"
+    "storybook",
+    "storybook-addon",
+    "code"
   ],
   "license": "MIT",
   "dependencies": {
