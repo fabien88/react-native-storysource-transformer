@@ -1,6 +1,6 @@
 {
   "name": "react-native-storysource-transformer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/fabien88/react-native-storysource-transformer",
   "bugs": "https://github.com/fabien88/react-native-storysource-transformer/issues",
   "description": "Provides storybook source in react-native to display on storybook web server",
@@ -14,7 +14,9 @@
   ],
   "keywords": [
     "addon",
-    "storybook"
+    "storybook",
+    "storybook-addon",
+    "code"
   ],
   "license": "MIT",
   "dependencies": {
